@@ -10,6 +10,7 @@ variables:
   GITHUB_USERNAME: 'DevLok2017'
   GITHUB_REPO: 'Test-Repo-Clone'
   GITHUB_ORG: 'DevLok2017'
+  GITHUB_TOKEN: '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'
 
 steps:
   - checkout: self
