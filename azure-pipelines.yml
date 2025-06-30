@@ -1,15 +1,14 @@
 trigger:
   branches:
     include:
-      - main  # adjust if your branch is named differently
+      - main  # Adjust if your Azure branch is named differently
 
 pool:
   vmImage: ubuntu-latest
 
 variables:
-  GITHUB_USERNAME: 'DevLok2017'
-  GITHUB_REPO: 'Test-Repo-Clone'
-  GITHUB_ORG: 'DevLok2017'
+  GITHUB_USERNAME: 'DevLok2017'                # Your GitHub username
+  GITHUB_REPO: 'Test-Repo-Clone'               # The repo name on GitHub
   GITHUB_TOKEN: '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'
 
 steps:
@@ -17,7 +16,7 @@ steps:
 
   - script: |
       echo "Adding GitHub remote..."
-      git remote add github https://$(GITHUB_USERNAME):$(GITHUB_TOKEN)@github.com/$(GITHUB_ORG)/$(GITHUB_REPO).git
+      git remote add github https://$(GITHUB_USERNAME):$(GITHUB_TOKEN)@github.com/$(GITHUB_USERNAME)/$(GITHUB_REPO).git
       
       echo "Pushing mirror to GitHub..."
       git push --mirror github
