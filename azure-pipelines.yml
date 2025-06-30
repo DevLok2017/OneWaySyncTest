@@ -18,6 +18,6 @@ steps:
       echo "Adding GitHub remote..."
       git remote add github https://$(GITHUB_USERNAME):$(GITHUB_TOKEN)@github.com/$(GITHUB_USERNAME)/$(GITHUB_REPO).git
       
-      echo "Pushing main branch to GitHub..."
-      git push github HEAD:main
-    displayName: 'Push main branch to GitHub'
+      echo "Force-pushing main branch to GitHub..."
+      git push -f github HEAD:main
+    displayName: 'Force-push main branch to GitHub'
