@@ -1,0 +1,23 @@
+trigger:
+  branches:
+    include:
+      - main  # adjust if your branch is named differently
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  GITHUB_USERNAME: 'DevLok2017'
+  GITHUB_REPO: 'Test-Repo-Clone'
+  GITHUB_ORG: 'DevLok2017'
+
+steps:
+  - checkout: self
+
+  - script: |
+      echo "Adding GitHub remote..."
+      git remote add github https://$(GITHUB_USERNAME):$(GITHUB_TOKEN)@github.com/$(GITHUB_ORG)/$(GITHUB_REPO).git
+      
+      echo "Pushing mirror to GitHub..."
+      git push --mirror github
+    displayName: 'Mirror push to GitHub'
