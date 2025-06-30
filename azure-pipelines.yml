@@ -8,7 +8,7 @@ pool:
 
 variables:
   GITHUB_USERNAME: 'DevLok2017'                # Your GitHub username
-  GITHUB_REPO: 'OneWaySyncTest'               # The repo name on GitHub
+  GITHUB_REPO: 'OneWaySyncTest'                # Updated repo name
   GITHUB_TOKEN: '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'
 
 steps:
@@ -19,5 +19,5 @@ steps:
       git remote add github https://$(GITHUB_USERNAME):$(GITHUB_TOKEN)@github.com/$(GITHUB_USERNAME)/$(GITHUB_REPO).git
       
       echo "Force-pushing main branch to GitHub..."
-      git push -f github HEAD:main
+      git push -f github HEAD:refs/heads/main
     displayName: 'Force-push main branch to GitHub'
