@@ -6,10 +6,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  GITHUB_USERNAME: 'DevLok2017'                # Your GitHub username
-  GITHUB_REPO: 'OneWaySyncTest'                # Updated repo name
-
 steps:
   - checkout: self
 
